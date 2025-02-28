@@ -39,8 +39,10 @@ Future work could include an exhaustive analysis of all possible combinations to
 | CWE Extended Description   |              |              |              | ✓            | ✓            |
 | CWE Demonstrative Examples |              |              |              |              | ✓            |
 
-The results of our experiment are stored in this directory. Each JSON comes with some metadata regarding our experiment paramerts. Further, each JSON contains a list of test cases and for each of them the used prompt, the LLMs answer as well as the number of prompt and response tokens are provided. This [notebook](evaluation.ipynb) presents how the JSON can be used to extract our experiment results.
+The results of our experiment are stored in this directory. Each JSON comes with some metadata regarding our experiment paramerts. The provided "seed" parameter was used to create the train split of our dataset used in this experiment, resulting in 1.557 test cases (few-shot examples already extracted). Further, each JSON contains a list of test cases and for each of them the used prompt, the LLMs answer as well as the number of prompt and response tokens are provided. The used prompt template for this experiment is "default_prompt_template" presented [here](../../../src/prompt_templates.py).
 
-Finally the following image presents the results of each combination of contextual information across the thresholds 1-10.
+This [notebook](evaluation.ipynb) presents how the JSON can be used to extract our experiment results.
+
+Finally the following image presents the results of each combination of contextual information across the thresholds 1-8, leaving out threshold 9 as it did not provide any valuable information.
 
 ![image](context_items_tn_fn_over_thresholds.png)
