@@ -11,8 +11,6 @@ Return a number for your decision ranging from "0.0" to "10.0", where "10.0" mea
 
 Give your answer in the following format:
 ```
-Explanation: "Let's think step by step..." 
----
 Decision: 0.0 - 10.0
 ```
 """
