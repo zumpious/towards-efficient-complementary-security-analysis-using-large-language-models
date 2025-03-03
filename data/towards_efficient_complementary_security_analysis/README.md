@@ -8,4 +8,4 @@ After identifying Qwen2.5 32B, GPT-4o, and Phi-4 as the most accurate models for
 
 The following figure visualizes the results of GPT-4o, Qwen2.5 32B, and Phi-4 in the self-consistency environment across various thresholds.
 
-![results](metrics_over_thresholds.png)
+![results](self_consistency_metrics_over_thresholds.png)
