@@ -9,3 +9,5 @@ After identifying Qwen2.5 32B, GPT-4o, and Phi-4 as the most accurate models for
 The following figure visualizes the results of GPT-4o, Qwen2.5 32B, and Phi-4 in the self-consistency environment across various thresholds.
 
 ![results](self_consistency_metrics_over_thresholds.png)
+
+The provided [evaluation.ipynb](evaluation.ipynb) notebook presents the SC results of GPT-4o, Qwen2.5 32B, and Phi-4 on a real-world dataset. This dataset was created by applying a variety of SAST tools to Mnestix, an open-source project developed by XITASO GmbH. The security findings from each SAST tool were manually labeled by security experts. Based on their manual labeling, we extracted an additional dataset consisting of 114 security findings, including 65 FPs and 49 TPs.
