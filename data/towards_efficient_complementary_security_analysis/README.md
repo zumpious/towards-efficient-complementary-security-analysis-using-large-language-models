@@ -10,4 +10,6 @@ The following figure visualizes the results of GPT-4o, Qwen2.5 32B, and Phi-4 in
 
 ![results](self_consistency_metrics_over_thresholds.png)
 
-The provided [evaluation.ipynb](evaluation.ipynb) notebook presents the SC results of GPT-4o, Qwen2.5 32B, and Phi-4 on a real-world dataset. This dataset was created by applying a variety of SAST tools to Mnestix, an open-source project developed by XITASO GmbH. The security findings from each SAST tool were manually labeled by security experts. Based on their manual labeling, we extracted an additional dataset consisting of 114 security findings, including 65 FPs and 49 TPs, as well as additional few-shot examples (e.g. for infrastructure related SAST tools).
+The provided [evaluation.ipynb](evaluation.ipynb) notebook presents the SC results of GPT-4o, Qwen2.5 32B, and Phi-4 on a real-world dataset. This dataset was created by applying a variety of SAST tools to **Mnestix**, an open-source project developed by XITASO GmbH.
+
+The security findings from each SAST tool were manually labeled by security experts. Based on their manual labeling, we extracted an additional dataset consisting of 114 security findings, including 65 FPs and 49 TPs, as well as additional few-shot examples, which are also provided in our [prompt_templates.py](../../src/few_shot_examples.py) (e.g. for infrastructure related SAST tools).
