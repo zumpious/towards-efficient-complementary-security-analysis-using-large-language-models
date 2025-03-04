@@ -4,9 +4,9 @@ After our preliminary study, we utilized the identified contextual information a
 
 We first compared different LLMs of various sizes and architectures in a 3-shot CoT setup. The results of this experiment are provided in the [results](./results/) directory.
 
-After identifying Qwen2.5 32B, GPT-4o, and Phi-4 as the most accurate models for our use case, we repeated our 3-shot CoT experiment using the self-consistency approach, which further improved the performance of the selected models. The provided [evaluation.ipynb](evaluation.ipynb) notebook demonstrates how to utilize our data and print the results for each model across all possible thresholds.
+After identifying Qwen2.5 32B, GPT-4o, and Phi-4 as the most accurate models for our use case, we repeated our 3-shot CoT experiment using the SC approach, which further improved the performance of the selected models. The provided [evaluation.ipynb](evaluation.ipynb) notebook demonstrates how to utilize our data and print the results for each model across all possible thresholds.
 
-The following figure visualizes the results of GPT-4o, Qwen2.5 32B, and Phi-4 in the self-consistency environment across various thresholds.
+The following figure visualizes the results of GPT-4o, Qwen2.5 32B, and Phi-4 in the SC environment across various thresholds.
 
 ![results](self_consistency_metrics_over_thresholds.png)
 

@@ -14,4 +14,4 @@ Finally, we repeated the experiment on the training split of the OWASP Benchmark
 
 The results indicate that 3-Shot CoT achieves the best performance, reaching a TN-FN ratio of approximately 1.86. Moreover, the computational cost of 3-Shot CoT is lower than that of 5-Shot CoT, further reinforcing our decision that 3-Shot CoT is the optimal choice for our use case.
 
-Additionally, the [notebook](evaluation.ipynb) demonstrates that Self-Consistency (SC), which involves repeating the experiment multiple times and selecting the most consistent answer, further improves overall performance.
+Additionally, the [notebook](evaluation.ipynb) demonstrates that SC, which involves repeating the experiment multiple times and selecting the most consistent answer, further improves overall performance.
