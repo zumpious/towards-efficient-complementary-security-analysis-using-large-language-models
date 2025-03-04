@@ -13,3 +13,13 @@ The following figure visualizes the results of GPT-4o, Qwen2.5 32B, and Phi-4 in
 The provided [evaluation.ipynb](evaluation.ipynb) notebook presents the SC results of GPT-4o, Qwen2.5 32B, and Phi-4 on a real-world dataset. This dataset was created by applying a variety of SAST tools to **Mnestix**, an open-source project developed by XITASO GmbH.
 
 The security findings from each SAST tool were manually labeled by security experts. Based on their manual labeling, we extracted an additional dataset consisting of 114 security findings, including 65 FPs and 49 TPs, as well as additional few-shot examples, which are also provided in our [prompt_templates.py](../../src/few_shot_examples.py) (e.g. for infrastructure related SAST tools).
+
+Not every SAST tool provides all contextual information. For this reason, the contextual information included in our prompts may vary from tool to tool. As explained in the provided [evaluation.ipynb](evaluation.ipynb) notebook, we mapped the information from each SAST tool to our context items identified in our [preliminary study](../preliminary_study/contextual_information_experiment/README.md). This can lead to instances where some contextual information is missing, as it may simply not be provided by the tool. The distribution of our previously used contextual information across the newly used SAST tools is visualized in the table below.
+
+| SAST Tool                 | Source Code | Category | CWE-ID | Method | Line of Code | Type |
+| ------------------------- | ----------- | -------- | ------ | ------ | ------------ | ---- |
+| CodeQL                    | ✓           | ✓        | ✓      |        | ✓            | ✓    |
+| Semgrep                   | ✓           | ✓        | ✓      |        | ✓            | ✓    |
+| KICS                      | ✓           | ✓        |        |        | ✓            | ✓    |
+| Checkov                   | ✓           |          |        |        | ✓            | ✓    |
+| SpotBugs with FindSecBugs | ✓           | ✓        | ✓      | ✓      | ✓            | ✓    |
