@@ -27,7 +27,7 @@ This repository contains the complete experimental results and supporting materi
        More details: [Comparing Prompting Techniques](data/preliminary_study/prompting_techniques_experiment/README.md).
 
   - **[Main Research Findings](data/towards_efficient_complementary_security_analysis/)**  
-    The main results of our research, including an evaluation of various LLM families (**Qwen, GPT, Phi, and LLaMA**) on both:
+    The main results of our research, including an evaluation of various LLM families (**Qwen, GPT, Phi, and Llama**) on both:
 
     - The **test split** (403 security findings) of the OWASP Benchmark security findings.
     - A **real-world dataset** (114 security findings) extracted from the **Mnestix** project.
