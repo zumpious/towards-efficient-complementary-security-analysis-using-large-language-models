@@ -30,7 +30,7 @@ This repository contains the complete experimental results and supporting materi
     The main results of our research, including an evaluation of various LLM families (**Qwen2.5 32B, GPT-4o, Phi-4, and LLaMA 3**) on both:
 
     - The **test split** (403 security findings) of the OWASP Benchmark security findings.
-    - A **real-world dataset** (117 security findings) extracted from the **Mnestix** project.
+    - A **real-world dataset** (114 security findings) extracted from the **Mnestix** project.
 
     More details: [Towards Efficient Complementary Security Analysis](data/towards_efficient_complementary_security_analysis/README.md).
 
