@@ -13,13 +13,13 @@ This repository contains the complete experimental results and supporting materi
     We used **SpotBugs** with the **FindSecBugs** plugin to analyze these test cases. Based on its results, we created two distinct datasets:
 
     - A **train split** containing approximately **80%** of all security findings, used in our preliminary study and for generating few-shot examples.
-    - A **test split** containing around **20%** of the security findings, later used to validate the findings of our preliminary study and to compare various LLMs to assess whether comparative security analysis is feasible using LLMs.
+    - A **test split** containing approximately **20%** of the security findings, later used to validate the findings of our preliminary study and to compare various LLMs to assess whether comparative security analysis is feasible using LLMs.
 
   - **[Preliminary Studies](data/preliminary_study/)**  
     Our preliminary study consists of two experiments:
 
     1. **[Contextual Information Analysis](data/preliminary_study/contextual_information_experiment/)**  
-       This experiment examines how different combinations of contextual information (from SpotBugs reports and the CWE database) impact LLM-based security assessments.  
+       This experiment examines how different combinations of contextual information (from SpotBugs reports and the CWE database) impact LLM-based security assessments. We further introduce our used prompt template here. 
        More details: [Comparing Contextual Information](data/preliminary_study/contextual_information_experiment/README.md).
 
     2. **[Prompting Techniques Comparison](data/preliminary_study/prompting_techniques_experiment/)**  
@@ -27,10 +27,10 @@ This repository contains the complete experimental results and supporting materi
        More details: [Comparing Prompting Techniques](data/preliminary_study/prompting_techniques_experiment/README.md).
 
   - **[Main Research Findings](data/towards_efficient_complementary_security_analysis/)**  
-    The main results of our research, including an evaluation of various LLM families (**Qwen2.5 32B, GPT-4o, Phi-4, and LLaMA 3**) on both:
+    The main results of our research, including an evaluation of various LLM families (**Qwen, GPT, Phi, and Llama**) on both:
 
-    - The **test split** of the OWASP Benchmark security findings.
-    - A **real-world dataset** extracted from the **Mnestix** project.
+    - The **test split** (403 security findings) of the OWASP Benchmark security findings.
+    - A **real-world dataset** (114 security findings) extracted from the **Mnestix** project.
 
     More details: [Towards Efficient Complementary Security Analysis](data/towards_efficient_complementary_security_analysis/README.md).
 
