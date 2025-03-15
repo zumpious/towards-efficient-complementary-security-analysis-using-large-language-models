@@ -2,6 +2,8 @@
 
 After our preliminary study, we utilized the identified contextual information and prompting technique to compare multiple LLM families on our test split dataset, which consists of 403 test cases across 11 vulnerability areas.
 
+We have further prepared an [exemplaric prompt](./exemplaric_prompt.py) to show how we integrate the contextual information of a security finding into our prompt template.
+
 We first compared different LLMs of various sizes and architectures in a 3-shot CoT setup. The results of this experiment are provided in the [results](./results/) and [self_consistency_results](./self_consistency_results/) directory.
 
 After identifying Qwen2.5 32B, GPT-4o, and Phi-4 as the most accurate models for our use case, we repeated our 3-shot CoT experiment using the SC approach, which further improved the performance of the selected models. The provided [evaluation.ipynb](evaluation.ipynb) notebook demonstrates how to utilize our data and print the results for each model across all possible thresholds.
