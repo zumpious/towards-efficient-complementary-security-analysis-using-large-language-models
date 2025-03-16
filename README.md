@@ -18,15 +18,15 @@ This repository contains the complete experimental results and supporting materi
   - **[Preliminary Studies](data/preliminary_study/)**  
     Our preliminary study consists of two experiments:
 
-    1. **[Contextual Information Analysis](data/preliminary_study/contextual_information_experiment/)**  
-       This experiment examines how different combinations of contextual information (from SpotBugs reports and the CWE database) impact LLM-based security assessments. We further introduce our used prompt template here. 
+    1. **[Contextual Information Analysis](data/preliminary_study/contextual_information_experiment/README.md)**  
+       This experiment examines how different combinations of contextual information (from SpotBugs reports and the CWE database) impact LLM-based security assessments. We further introduce our used prompt template here.
        More details: [Comparing Contextual Information](data/preliminary_study/contextual_information_experiment/README.md).
 
-    2. **[Prompting Techniques Comparison](data/preliminary_study/prompting_techniques_experiment/)**  
+    2. **[Prompting Techniques Comparison](data/preliminary_study/prompting_techniques_experiment/README.md)**  
        This study compares Few-Shot, Chain-of-Thought (CoT), and Self-Consistency (SC) prompting techniques using **GPT-3.5 Turbo**.  
        More details: [Comparing Prompting Techniques](data/preliminary_study/prompting_techniques_experiment/README.md).
 
-  - **[Main Research Findings](data/towards_efficient_complementary_security_analysis/)**  
+  - **[Main Research Findings](data/towards_efficient_complementary_security_analysis/README.md)**  
     The main results of our research, including an evaluation of various LLM families (**Qwen, GPT, Phi, and Llama**) on both:
 
     - The **test split** (403 security findings) of the OWASP Benchmark security findings.
