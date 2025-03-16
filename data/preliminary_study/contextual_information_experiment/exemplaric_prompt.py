@@ -1,112 +1,130 @@
-exemplaric_prompt = (
-    '\nAnalyze the following potential vulnerability that was found by the security scanner "SpotBugs" '
-    'with the "FindSecurityBugs"-Plugin in a Java source code project.\n\n'
-    "Vulnerability identified by the security scanner and contextual information:\n"
-    "Source code: ```/**\n"
-    " * OWASP Benchmark Project v1.2\n"
-    " *\n"
-    " * <p>This file is part of the Open Web Application Security Project (OWASP) Benchmark Project. For\n"
-    " * details, please see <a\n"
-    ' * href="https://owasp.org/www-project-benchmark/">https://owasp.org/www-project-benchmark/</a>.\n'
-    " *\n"
-    " * <p>The OWASP Benchmark is free software: you can redistribute it and/or modify it under the terms\n"
-    " * of the GNU General Public License as published by the Free Software Foundation, version 2.\n"
-    " *\n"
-    " * <p>The OWASP Benchmark is distributed in the hope that it will be useful, but WITHOUT ANY\n"
-    " * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR\n"
-    " * PURPOSE. See the GNU General Public License for more details.\n"
-    " *\n"
-    " * @author Nick Sanidas\n"
-    " * @created 2015\n"
-    " */\n"
-    "package org.owasp.benchmark.testcode;\n\n"
-    "import java.io.IOException;\n"
-    "import javax.servlet.ServletException;\n"
-    "import javax.servlet.annotation.WebServlet;\n"
-    "import javax.servlet.http.HttpServlet;\n"
-    "import javax.servlet.http.HttpServletRequest;\n"
-    "import javax.servlet.http.HttpServletResponse;\n\n"
-    '@WebServlet(value = "/hash-00/BenchmarkTest00346")\n'
-    "public class BenchmarkTest00346 extends HttpServlet {\n\n"
-    "    private static final long serialVersionUID = 1L;\n\n"
-    "    @Override\n"
-    "    public void doGet(HttpServletRequest request, HttpServletResponse response)\n"
-    "            throws ServletException, IOException {\n"
-    "        doPost(request, response);\n"
-    "    }\n\n"
-    "    @Override\n"
-    "    public void doPost(HttpServletRequest request, HttpServletResponse response)\n"
-    "            throws ServletException, IOException {\n"
-    '        response.setContentType("text/html;charset=UTF-8");\n\n'
-    "        java.io.InputStream param = request.getInputStream();\n\n"
-    "        java.io.InputStream bar = param;\n\n"
-    "        java.security.Provider[] provider = java.security.Security.getProviders();\n"
-    "        java.security.MessageDigest md;\n\n"
-    "        try {\n"
-    "            if (provider.length > 1) {\n\n"
-    '                md = java.security.MessageDigest.getInstance("SHA1", provider[0]);\n'
-    "            } else {\n"
-    '                md = java.security.MessageDigest.getInstance("SHA1", "SUN");\n'
-    "            }\n"
-    "            byte[] input = {(byte) '?'};\n"
-    "            Object inputParam = bar;\n"
-    "            if (inputParam instanceof String) input = ((String) inputParam).getBytes();\n"
-    "            if (inputParam instanceof java.io.InputStream) {\n"
-    "                byte[] strInput = new byte[1000];\n"
-    "                int i = ((java.io.InputStream) inputParam).read(strInput);\n"
-    "                if (i == -1) {\n"
-    "                    response.getWriter()\n"
-    "                            .println(\n"
-    '                                    "This input source requires a POST, not a GET. Incompatible UI for the InputStream source.");\n'
-    "                    return;\n"
-    "                }\n"
-    "                input = java.util.Arrays.copyOf(strInput, i);\n"
-    "            }\n"
-    "            md.update(input);\n\n"
-    "            byte[] result = md.digest();\n"
-    "            java.io.File fileTarget =\n"
-    "                    new java.io.File(\n"
-    "                            new java.io.File(org.owasp.benchmark.helpers.Utils.TESTFILES_DIR),\n"
-    '                            "passwordFile.txt");\n'
-    "            java.io.FileWriter fw =\n"
-    "                    new java.io.FileWriter(fileTarget, true); // the true will append the new data\n"
-    "            fw.write(\n"
-    '                    "hash_value="\n'
-    "                            + org.owasp.esapi.ESAPI.encoder().encodeForBase64(result, true)\n"
-    '                            + "\\n");\n'
-    "            fw.close();\n"
-    "            response.getWriter()\n"
-    "                    .println(\n"
-    '                            "Sensitive value \'"\n'
-    "                                    + org.owasp\n"
-    "                                            .esapi\n"
-    "                                            .ESAPI\n"
-    "                                            .encoder()\n"
-    "                                            .encodeForHTML(new String(input))\n"
-    '                                    + "\' hashed and stored<br/>");\n\n'
-    "        } catch (java.security.NoSuchAlgorithmException e) {\n"
-    "            System.out.println(\n"
-    '                    "Problem executing hash - TestCase java.security.MessageDigest.getInstance(java.lang.String,java.security.Provider)");\n'
-    "            throw new ServletException(e);\n"
-    "        } catch (java.security.NoSuchProviderException e) {\n"
-    "            System.out.println(\n"
-    '                    "Problem executing hash - TestCase java.security.MessageDigest.getInstance(java.lang.String,java.security.Provider)");\n'
-    "            throw new ServletException(e);\n"
-    "        }\n\n"
-    "        response.getWriter()\n"
-    "                .println(\n"
-    '                        "Hash Test java.security.MessageDigest.getInstance(java.lang.String,java.security.Provider) executed");\n'
-    "    }\n"
-    "}\n"
-    "```\n"
-    "CWE ID: 328\n"
-    "Category: hash\n\n"
-    "The source code included might be a false positive classification by the SAST scanner.\n"
-    "Do you agree with the scanner that this source code contains an actual vulnerability?\n\n"
-    'Return a number for your decision ranging from "0.0" to "10.0", where "10.0" means you absolutely agree with the scanner, '
-    '"0.0" means you absolutely do not agree, and any number around "5.0" means that you are not sure.\n\n'
-    "Give your answer in the following format:\n"
-    "```\n"
-    "Decision: 0.0 - 10.0\n"
-    "```\n"
-)
+exemplaric_prompt = """
+  Analyze the following potential vulnerability that was found by the security scanner "SpotBugs" with the "FindSecurityBugs"-Plugin in a Java source code project.
+
+  Vulnerability identified by the security scanner and contextual information:
+  Source code: ```/**
+   * OWASP Benchmark Project v1.2
+   *
+   * <p>This file is part of the Open Web Application Security Project (OWASP) Benchmark Project. For
+   * details, please see <a
+   * href="https://owasp.org/www-project-benchmark/">https://owasp.org/www-project-benchmark/</a>.
+   *
+   * <p>The OWASP Benchmark is free software: you can redistribute it and/or modify it under the terms
+   * of the GNU General Public License as published by the Free Software Foundation, version 2.
+   *
+   * <p>The OWASP Benchmark is distributed in the hope that it will be useful, but WITHOUT ANY
+   * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+   * PURPOSE. See the GNU General Public License for more details.
+   *
+   * @author Nick Sanidas
+   * @created 2015
+   */
+  package org.owasp.benchmark.testcode;
+
+  import java.io.IOException;
+  import javax.servlet.ServletException;
+  import javax.servlet.annotation.WebServlet;
+  import javax.servlet.http.HttpServlet;
+  import javax.servlet.http.HttpServletRequest;
+  import javax.servlet.http.HttpServletResponse;
+
+  @WebServlet(value = "/hash-00/BenchmarkTest00346")
+  public class BenchmarkTest00346 extends HttpServlet {
+
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+      doPost(request, response);
+    }
+
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+      response.setContentType("text/html;charset=UTF-8");
+
+      java.io.InputStream param = request.getInputStream();
+
+      java.io.InputStream bar = param;
+
+      java.security.Provider[] provider = java.security.Security.getProviders();
+      java.security.MessageDigest md;
+
+      try {
+        if (provider.length > 1) {
+
+          md = java.security.MessageDigest.getInstance("SHA1", provider[0]);
+        } else {
+          md = java.security.MessageDigest.getInstance("SHA1", "SUN");
+        }
+        byte[] input = {(byte) '?'};
+        Object inputParam = bar;
+        if (inputParam instanceof String) input = ((String) inputParam).getBytes();
+        if (inputParam instanceof java.io.InputStream) {
+          byte[] strInput = new byte[1000];
+          int i = ((java.io.InputStream) inputParam).read(strInput);
+          if (i == -1) {
+            response.getWriter()
+                .println(
+                    "This input source requires a POST, not a GET. Incompatible UI for the InputStream source.");
+            return;
+          }
+          input = java.util.Arrays.copyOf(strInput, i);
+        }
+        md.update(input);
+
+        byte[] result = md.digest();
+        java.io.File fileTarget =
+            new java.io.File(
+                new java.io.File(org.owasp.benchmark.helpers.Utils.TESTFILES_DIR),
+                "passwordFile.txt");
+        java.io.FileWriter fw =
+            new java.io.FileWriter(fileTarget, true); // the true will append the new data
+        fw.write(
+            "hash_value="
+                + org.owasp.esapi.ESAPI.encoder().encodeForBase64(result, true)
+                + "\\n");
+        fw.close();
+        response.getWriter()
+            .println(
+                "Sensitive value '"
+                    + org.owasp
+                        .esapi
+                        .ESAPI
+                        .encoder()
+                        .encodeForHTML(new String(input))
+                    + "' hashed and stored<br/>");
+
+      } catch (java.security.NoSuchAlgorithmException e) {
+        System.out.println(
+            "Problem executing hash - TestCase java.security.MessageDigest.getInstance(java.lang.String,java.security.Provider)");
+        throw new ServletException(e);
+      } catch (java.security.NoSuchProviderException e) {
+        System.out.println(
+            "Problem executing hash - TestCase java.security.MessageDigest.getInstance(java.lang.String,java.security.Provider)");
+        throw new ServletException(e);
+      }
+
+      response.getWriter()
+          .println(
+              "Hash Test java.security.MessageDigest.getInstance(java.lang.String,java.security.Provider) executed");
+    }
+  }
+  ```
+  CWE ID: 328
+  Category: hash
+  Type of potential vulnerability: WEAK_MESSAGE_DIGEST_SHA1
+  Method: doPost
+  Line of code: 53
+
+  The source code included might be a false positive classification by the SAST scanner.
+  Do you agree with the scanner that this source code contains an actual vulnerability?
+
+  Return a number for your decision ranging from "0.0" to "10.0", where "10.0" means you absolutely agree with the scanner, "0.0" means you absolutely do not agree, and any number around "5.0" means that you are not sure.
+
+  Give your answer in the following format:
+  ```
+  Decision: 0.0 - 10.0
+  ```
+"""

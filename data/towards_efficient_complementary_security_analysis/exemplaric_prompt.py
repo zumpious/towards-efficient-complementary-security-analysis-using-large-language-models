@@ -1,102 +1,102 @@
-exemplaric_prompt = (
-    'Analyze the following potential vulnerability that was found by the security scanner "SpotBugs" with the "FindSecurityBugs"-Plugin in a Java source code project.\n\n'
-    "Vulnerability identified by the security scanner and contextual information:\n"
-    "Source code: ```/**\n"
-    " * OWASP Benchmark Project v1.2\n"
-    " *\n"
-    " * <p>This file is part of the Open Web Application Security Project (OWASP) Benchmark Project. For\n"
-    " * details, please see <a\n"
-    ' * href="https://owasp.org/www-project-benchmark/">https://owasp.org/www-project-benchmark/</a>.\n'
-    " *\n"
-    " * <p>The OWASP Benchmark is free software: you can redistribute it and/or modify it under the terms\n"
-    " * of the GNU General Public License as published by the Free Software Foundation, version 2.\n"
-    " *\n"
-    " * <p>The OWASP Benchmark is distributed in the hope that it will be useful, but WITHOUT ANY\n"
-    " * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR\n"
-    " * PURPOSE. See the GNU General Public License for more details.\n"
-    " *\n"
-    " * @author Dave Wichers\n"
-    " * @created 2015\n"
-    " */\n"
-    "package org.owasp.benchmark.testcode;\n\n"
-    "import java.io.IOException;\n"
-    "import javax.servlet.ServletException;\n"
-    "import javax.servlet.annotation.WebServlet;\n"
-    "import javax.servlet.http.HttpServlet;\n"
-    "import javax.servlet.http.HttpServletRequest;\n"
-    "import javax.servlet.http.HttpServletResponse;\n\n"
-    '@WebServlet(value = "/sqli-03/BenchmarkTest01620")\n'
-    "public class BenchmarkTest01620 extends HttpServlet {\n\n"
-    "    private static final long serialVersionUID = 1L;\n\n"
-    "    @Override\n"
-    "    public void doGet(HttpServletRequest request, HttpServletResponse response)\n"
-    "            throws ServletException, IOException {\n"
-    "        doPost(request, response);\n"
-    "    }\n\n"
-    "    @Override\n"
-    "    public void doPost(HttpServletRequest request, HttpServletResponse response)\n"
-    "            throws ServletException, IOException {\n"
-    '        response.setContentType("text/html;charset=UTF-8");\n\n'
-    '        String[] values = request.getParameterValues("BenchmarkTest01620");\n'
-    "        String param;\n"
-    "        if (values != null && values.length > 0) param = values[0];\n"
-    '        else param = "";\n\n'
-    "        String bar = new Test().doSomething(request, param);\n\n"
-    '        String sql = "{call " + bar + "}";\n\n'
-    "        try {\n"
-    "            java.sql.Connection connection =\n"
-    "                    org.owasp.benchmark.helpers.DatabaseHelper.getSqlConnection();\n"
-    "            java.sql.CallableStatement statement = connection.prepareCall(sql);\n"
-    "            java.sql.ResultSet rs = statement.executeQuery();\n"
-    "            org.owasp.benchmark.helpers.DatabaseHelper.printResults(rs, sql, response);\n\n"
-    "        } catch (java.sql.SQLException e) {\n"
-    "            if (org.owasp.benchmark.helpers.DatabaseHelper.hideSQLErrors) {\n"
-    '                response.getWriter().println("Error processing request.");\n'
-    "                return;\n"
-    "            } else throw new ServletException(e);\n"
-    "        }\n"
-    "    } // end doPost\n\n"
-    "    private class Test {\n\n"
-    "        public String doSomething(HttpServletRequest request, String param)\n"
-    "                throws ServletException, IOException {\n\n"
-    "            String bar;\n"
-    '            String guess = "ABC";\n'
-    "            char switchTarget = guess.charAt(2);\n\n"
-    "            // Simple case statement that assigns param to bar on conditions 'A', 'C', or 'D'\n"
-    "            switch (switchTarget) {\n"
-    "                case 'A':\n"
-    "                    bar = param;\n"
-    "                    break;\n"
-    "                case 'B':\n"
-    '                    bar = "bobs_your_uncle";\n'
-    "                    break;\n"
-    "                case 'C':\n"
-    "                case 'D':\n"
-    "                    bar = param;\n"
-    "                    break;\n"
-    "                default:\n"
-    '                    bar = "bobs_your_uncle";\n'
-    "                    break;\n"
-    "            }\n\n"
-    "            return bar;\n"
-    "        }\n"
-    "    } // end innerclass Test\n"
-    "} // end DataflowThruInnerClass\n"
-    "```\n"
-    "CWE ID: 89\n"
-    "Category: sqli\n"
-    "Type of potential vulnerability: SQL_INJECTION_JDBC\n"
-    "Method: doPost\n"
-    "Line of code: 50\n\n"
-    "The source code included might be a false positive classification by the SAST scanner.\n"
-    "Do you agree with the scanner that this source code contains an actual vulnerability?\n\n"
-    'Return a number for your decision ranging from "0.0" to "10.0", where "10.0" means you absolutely agree with the scanner, "0.0" means you absolutely do not agree, and any number around "5.0" means that you are not sure.\n'
-    "Think step by step. \n\n"
-    "Give your answer in the following format:\n"
-    "```\n"
-    'Explanation: "Let\'s think step by step..." \n'
-    "---\n"
-    "Decision: 0.0 - 10.0\n"
-    "```\n\n"
-    "Explanation:\n"
-)
+exemplaric_prompt = """
+  Analyze the following potential vulnerability that was found by the security scanner "SpotBugs" with the "FindSecurityBugs"-Plugin in a Java source code project.
+  Vulnerability identified by the security scanner and contextual information:
+  Source code: ```/**
+    * OWASP Benchmark Project v1.2
+    *
+    * <p>This file is part of the Open Web Application Security Project (OWASP) Benchmark Project. For
+    * details, please see <a
+    * href="https://owasp.org/www-project-benchmark/">https://owasp.org/www-project-benchmark/</a>.
+    *
+    * <p>The OWASP Benchmark is free software: you can redistribute it and/or modify it under the terms
+    * of the GNU General Public License as published by the Free Software Foundation, version 2.
+    *
+    * <p>The OWASP Benchmark is distributed in the hope that it will be useful, but WITHOUT ANY
+    * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+    * PURPOSE. See the GNU General Public License for more details.
+    *
+    * @author Dave Wichers
+    * @created 2015
+    */
+  package org.owasp.benchmark.testcode;
+  import java.io.IOException;
+  import javax.servlet.ServletException;
+  import javax.servlet.annotation.WebServlet;
+  import javax.servlet.http.HttpServlet;
+  import javax.servlet.http.HttpServletRequest;
+  import javax.servlet.http.HttpServletResponse;
+  @WebServlet(value = "/sqli-03/BenchmarkTest01620")
+  public class BenchmarkTest01620 extends HttpServlet {
+      private static final long serialVersionUID = 1L;
+      @Override
+      public void doGet(HttpServletRequest request, HttpServletResponse response)
+              throws ServletException, IOException {
+          doPost(request, response);
+      }
+      @Override
+      public void doPost(HttpServletRequest request, HttpServletResponse response)
+              throws ServletException, IOException {
+          response.setContentType("text/html;charset=UTF-8");
+          String[] values = request.getParameterValues("BenchmarkTest01620");
+          String param;
+          if (values != null && values.length > 0) param = values[0];
+          else param = "";
+          String bar = new Test().doSomething(request, param);
+          String sql = "{call " + bar + "}";
+          try {
+              java.sql.Connection connection =
+                      org.owasp.benchmark.helpers.DatabaseHelper.getSqlConnection();
+              java.sql.CallableStatement statement = connection.prepareCall(sql);
+              java.sql.ResultSet rs = statement.executeQuery();
+              org.owasp.benchmark.helpers.DatabaseHelper.printResults(rs, sql, response);
+          } catch (java.sql.SQLException e) {
+              if (org.owasp.benchmark.helpers.DatabaseHelper.hideSQLErrors) {
+                  response.getWriter().println("Error processing request.");
+                  return;
+              } else throw new ServletException(e);
+          }
+      } // end doPost
+      private class Test {
+          public String doSomething(HttpServletRequest request, String param)
+                  throws ServletException, IOException {
+              String bar;
+              String guess = "ABC";
+              char switchTarget = guess.charAt(2);
+              // Simple case statement that assigns param to bar on conditions 'A', 'C', or 'D'
+              switch (switchTarget) {
+                  case 'A':
+                      bar = param;
+                      break;
+                  case 'B':
+                      bar = "bobs_your_uncle";
+                      break;
+                  case 'C':
+                  case 'D':
+                      bar = param;
+                      break;
+                  default:
+                      bar = "bobs_your_uncle";
+                      break;
+              }
+              return bar;
+          }
+      } // end innerclass Test
+  } // end DataflowThruInnerClass
+  ```
+  CWE ID: 89
+  Category: sqli
+  Type of potential vulnerability: SQL_INJECTION_JDBC
+  Method: doPost
+  Line of code: 50
+  The source code included might be a false positive classification by the SAST scanner.
+  Do you agree with the scanner that this source code contains an actual vulnerability?
+  Return a number for your decision ranging from "0.0" to "10.0", where "10.0" means you absolutely agree with the scanner, "0.0" means you absolutely do not agree, and any number around "5.0" means that you are not sure.
+  Think step by step. 
+  Give your answer in the following format:
+  ```
+  Explanation: "Let\'s think step by step..." 
+  ---
+  Decision: 0.0 - 10.0
+  ```
+  Explanation:
+"""
