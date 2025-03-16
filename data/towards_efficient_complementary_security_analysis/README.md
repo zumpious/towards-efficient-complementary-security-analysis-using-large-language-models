@@ -2,7 +2,7 @@
 
 After our preliminary study, we utilized the identified contextual information and prompting technique to compare multiple LLM families on our test split dataset, which consists of 403 test cases across 11 vulnerability areas.
 
-We have further prepared an [exemplaric prompt](./exemplaric_prompt.py) to show how we integrate the contextual information of a security finding into our prompt template.
+We have further prepared an [exemplary prompt](./exemplary_prompt.py) to show how we integrate the contextual information of a security finding into our prompt template.
 
 We first compared different LLMs of various sizes and architectures in a 3-shot CoT setup. The results of this experiment are provided in the [results](./results/) and [self_consistency_results](./self_consistency_results/) directory.
 

@@ -1,4 +1,4 @@
-exemplaric_prompt = """
+exemplary_prompt = """
   Analyze the following potential vulnerability that was found by the security scanner "SpotBugs" with the "FindSecurityBugs"-Plugin in a Java source code project.
   Vulnerability identified by the security scanner and contextual information:
   Source code: ```/**
