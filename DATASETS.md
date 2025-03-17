@@ -79,7 +79,7 @@ We selected several SAST tools for static analysis:
 
 ### Processing & Dataset Distribution
 
-Originally, a total of **120** findings were extracted from all SAST tool reports and combined into one dataset. Out of these **120** real-world samples, **6** were excluded from the dataset and used to generate [few-shot examples](/src/few_shot_examples.py) (3 samples for CWE-374 and 3 samples for infrastructure code). This resulted in a newly created dataset of **114 real-world security findings**. The distribution of samples by the used SAST tool and security finding type is detailed below:
+Originally, a total of **120** findings were extracted from all SAST tool reports and combined into one dataset. Out of these **120** real-world samples, **6** were excluded from the dataset and used to generate [few-shot examples](/src/few_shot_examples.py) (3 samples for CWE-374 and 3 samples for infrastructure code). This resulted in a newly created dataset of **114 real-world security findings**. All of these findings were manually labeled by multiple security experts, forming our ground source of truth. The distribution of samples by the used SAST tool and security finding type is detailed below:
 
 | scanner                 | type                                      | TP  | FP  | Total |
 | ----------------------- | ----------------------------------------- | --- | --- | ----- |
