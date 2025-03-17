@@ -14,7 +14,7 @@ The primary dataset for our research was extracted from the [OWASP Benchmark (v1
 
 We used **SpotBugs** with the **FindSecBugs** plugin to analyze these test cases and stored the results in [spotbugs_dataset.pkl](data/owasp_benchmark/spotbugs_dataset.pkl). The SAST tool produced a total of **2,015** security findings on the benchmark dataset, from which we then extracted two datasets:
 
-- **Train Split**: Approximately **80%** of all security findings
+- ## **Train Split**: Approximately **80%** of all security findings
 
   - Orginially containing 1,612 samples.
   - To later generate [few-shot examples](/src/few_shot_examples.py), we held back **55** of these samples (**5** per unique vulnerability area), resulting in our **train split** of **1,557 samples**.
@@ -69,7 +69,7 @@ To demonstrate that we have developed a generalizable framework for complementar
 
 ### Used SAST Tools
 
-We selected several SAST tools for static analysis:
+We selected several SAST tools for our static analysis:
 
 - CodeQL
 - Semgrep

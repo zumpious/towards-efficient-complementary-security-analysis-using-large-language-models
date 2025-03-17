@@ -19,11 +19,11 @@ This repository contains the complete experimental results and supporting materi
     Our preliminary study consists of two experiments:
 
     1. **[Contextual Information Analysis](data/preliminary_study/contextual_information_experiment/README.md)**  
-       This experiment examines how different combinations of contextual information (from SpotBugs reports and the CWE database) impact LLM-based security assessments. We further introduce our used prompt template here.
+       This experiment examines how different combinations of contextual information (from SpotBugs reports and the CWE database) impact LLM-based security assessments. We further introduce our used prompt template here. This experiment was conducted on the **train set**.
        More details: [Comparing Contextual Information](data/preliminary_study/contextual_information_experiment/README.md).
 
     2. **[Prompting Techniques Comparison](data/preliminary_study/prompting_techniques_experiment/README.md)**  
-       This study compares Few-Shot, Chain-of-Thought (CoT), and Self-Consistency (SC) prompting techniques using **GPT-3.5 Turbo**.  
+       This study compares Few-Shot, Chain-of-Thought (CoT), and Self-Consistency (SC) prompting techniques using **GPT-3.5 Turbo**. This experiment was conducted on the **train set**.
        More details: [Comparing Prompting Techniques](data/preliminary_study/prompting_techniques_experiment/README.md).
 
   - **[Main Research Findings](data/towards_efficient_complementary_security_analysis/README.md)**  
@@ -31,6 +31,8 @@ This repository contains the complete experimental results and supporting materi
 
     - The **test split** (403 security findings) of the OWASP Benchmark security findings.
     - A **real-world dataset** (114 security findings) extracted from the **Mnestix** project.
+
+    For more information on the used datasets see: [datasets.md](/datasets.md).
 
     More details: [Towards Efficient Complementary Security Analysis](data/towards_efficient_complementary_security_analysis/README.md).
 

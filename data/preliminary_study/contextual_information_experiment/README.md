@@ -24,7 +24,7 @@ Subsequently, both of these configurations were extended with additional context
 
 Conversely, the fifth configuration was based on the assumption that the SpotBugs context items are more influential. Hence, this configuration included only a short description of the related CWE and its name.
 
-Future work could include an exhaustive analysis of all possible combinations to obtain a more comprehensive understanding of the influence of different contextual information on an LLM's assessment of security findings. It could also be done with a more diverse set of LLMs, as all our experiments were conducted using GPT 3.5 Turbo.
+Future work could include an exhaustive analysis of all possible combinations to obtain a more comprehensive understanding of the influence of different contextual information on an LLM's assessment of security findings. It could also be done with a more diverse set of LLMs, as all our experiments were conducted using GPT-3.5 Turbo.
 
 | **Context Items**          | **Config 1** | **Config 2** | **Config 3** | **Config 4** | **Config 5** |
 | -------------------------- | ------------ | ------------ | ------------ | ------------ | ------------ |
@@ -39,7 +39,7 @@ Future work could include an exhaustive analysis of all possible combinations to
 | CWE Extended Description   |              |              |              | ✓            | ✓            |
 | CWE Demonstrative Examples |              |              |              |              | ✓            |
 
-The results of our experiment are stored in this directory. Each JSON comes with some metadata regarding our experiment. Further, each JSON contains a list of 1.557 test cases (few-shot examples already extracted) and for each of them the used prompt, the LLMs answer as well as the number of prompt and response tokens are provided. The used prompt template for this experiment is "default_prompt_template" presented [here](../../../src/prompt_templates.py).
+The results of our experiment, conducted on the [**train split**](../../../datasets.md), are stored in this directory. Each JSON comes with some metadata regarding our experiment. Further, each JSON contains a list of 1.557 test cases (few-shot examples already extracted) and for each of them the used prompt, the LLMs answer as well as the number of prompt and response tokens are provided. The used prompt template for this experiment is "default_prompt_template" presented [here](../../../src/prompt_templates.py).
 
 We fruther provided one [exemplary prompt](./exemplary_prompt.py).
 
