@@ -1,6 +1,6 @@
 # Towars Efficient Complementary Security Analysis using Large Language Models
 
-After our preliminary study, we utilized the identified contextual information and prompting technique to compare multiple LLM families on our **test split** dataset, which consists of 403 test cases across 11 vulnerability areas and on our **mnestix dataset**, which consits of 114 real-world security findings. For more details about the datasets see: [datasets.md](../../datasets.md).
+After our preliminary study, we utilized the identified contextual information and prompting technique to compare multiple LLM families on our **test split** dataset, which consists of 403 test cases across 11 vulnerability areas and on our **mnestix dataset**, which consits of 114 real-world security findings. For more details about the datasets see: [datasets.md](../../DATASETS.md).
 
 We have further prepared an [exemplary prompt](./exemplary_prompt.py) to show how we integrate the contextual information of a security finding into our prompt template.
 
@@ -12,7 +12,7 @@ The following figure visualizes the results of GPT-4o, Qwen2.5 32B, and Phi-4 in
 
 ![results](self_consistency_metrics_over_thresholds.png)
 
-The provided [evaluation.ipynb](evaluation.ipynb) notebook presents the SC results of GPT-4o, Qwen2.5 32B, and Phi-4 on a [real-world dataset](../../datasets.md). This dataset was created by applying a variety of SAST tools to **Mnestix**, an open-source project developed by XITASO GmbH.
+The provided [evaluation.ipynb](evaluation.ipynb) notebook presents the SC results of GPT-4o, Qwen2.5 32B, and Phi-4 on a [real-world dataset](../../DATASETS.md). This dataset was created by applying a variety of SAST tools to **Mnestix**, an open-source project developed by XITASO GmbH.
 
 Not every SAST tool provides all contextual information used in the previous experiment. For this reason, the contextual information included in our prompts may vary from tool to tool. As explained in the provided [evaluation.ipynb](evaluation.ipynb) notebook, we mapped the information from each SAST tool to our context items identified in our [preliminary study](../preliminary_study/contextual_information_experiment/README.md). This can lead to instances where some contextual information is missing, as it may simply not be provided by the tool. The distribution of our previously used contextual information across the newly used SAST tools is visualized in the table below.
 
