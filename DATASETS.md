@@ -8,7 +8,7 @@ The primary dataset for our research was extracted from the [OWASP Benchmark (v1
 
 ### Characteristics
 
-- The benachmark contains over **2,740** test cases
+- The benchmark contains over **2,740** test cases
 - Covers **11 different vulnerability areas** (imbalanced)
 - Can be directly analyzed by SAST tools
 
@@ -16,7 +16,7 @@ We used **SpotBugs** with the **FindSecBugs** plugin to analyze these test cases
 
 - ## **Train Split**: Approximately **80%** of all security findings
 
-  - Orginially containing 1,612 samples.
+  - Originally containing 1,612 samples.
   - To later generate [few-shot examples](/src/few_shot_examples.py), we held back **55** of these samples (**5** per unique vulnerability area), resulting in our **train split** of **1,557 samples**.
   - The train split was used in both experiments of our **preliminary study**.
   - The train split, as well as the entire benchmark dataset, is imbalanced. For that reason, we perform a **weighted calculation** of performance metrics. The sample distribution of the train split is shown below:
