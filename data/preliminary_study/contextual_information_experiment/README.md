@@ -1,6 +1,6 @@
 # Comparing Contextual Information
 
-To firstly identify what specific contextual information can be of great interest for an LLM's assessment of security findings, we performed a preliminary experiment. The SAST tool we used on the OWASP Benchmark dataset, SpotBugs with the FindSecBugs plugin, provides the following contextual information about each finding:
+To first identify what specific contextual information can be of great interest for an LLM's assessment of security findings, we performed a preliminary experiment. The SAST tool we used on the OWASP Benchmark dataset, SpotBugs with the FindSecBugs plugin, provides the following contextual information about each finding:
 
 1. Source code
 2. Category
@@ -41,7 +41,7 @@ Future work could include an exhaustive analysis of all possible combinations to
 
 The results of our experiment, conducted on the [**train split**](../../../DATASETS.md), are stored in this directory. Each JSON comes with some metadata regarding our experiment. Further, each JSON contains a list of 1.557 test cases (few-shot examples already extracted) and for each of them the used prompt, the LLMs answer as well as the number of prompt and response tokens are provided. The used prompt template for this experiment is "default_prompt_template" presented [here](../../../src/prompt_templates.py).
 
-We fruther provided one [exemplary prompt](./exemplary_prompt.py).
+We further provided one [exemplary prompt](./exemplary_prompt.py).
 
 This [notebook](evaluation.ipynb) presents how the JSON can be used to extract our experiment results.
 
