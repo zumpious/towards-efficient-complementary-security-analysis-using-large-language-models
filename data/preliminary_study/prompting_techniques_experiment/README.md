@@ -12,6 +12,6 @@ Finally, we repeated the experiment on the training split of the OWASP Benchmark
 
 ![tn_fn_results](pts_tn_fn_over_thresholds.png)
 
-The results indicate that 3-Shot CoT achieves the best performance, reaching a TN-FN ratio of approximately 1.86. Moreover, as shown in the provided [evaluation notebook](evaluation.ipynb), 3-Shot CoT prompting produces a total of 7,969,063 prompt token, whereas 5-Shot CoT prompting produces a total of 12,289,222 prompt tokens. The computational cost of 3-Shot CoT is lower than that of 5-Shot CoT (~4,320,000 less prompt tokens), further reinforcing our decision that 3-Shot CoT is the optimal choice for our use case.
+The results indicate that 3-Shot CoT achieves the best performance, reaching a TN-FN ratio of approximately 1.86. Moreover, as shown in the provided [evaluation notebook](evaluation.ipynb), 3-Shot CoT prompting produces a total of 7,969,063 prompt token, whereas 5-Shot CoT prompting produces a total of 12,289,222 prompt tokens. The computational cost of 3-Shot CoT is approximatly 35% lower than that of 5-Shot CoT (~4,320,000 less prompt tokens), further reinforcing our decision that 3-Shot CoT is the optimal choice for our use case.
 
 Additionally, the [notebook](evaluation.ipynb) demonstrates that SC, which involves repeating the experiment multiple times and selecting the most consistent answer, further improves overall performance.
