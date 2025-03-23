@@ -1,6 +1,6 @@
 # Towars Efficient Complementary Security Analysis using Large Language Models
 
-After our preliminary study, we utilized the identified contextual information and prompting technique to compare multiple LLM families on our **test split** dataset, which consists of 403 test cases across 11 vulnerability areas and on our **mnestix dataset**, which consits of 114 real-world security findings. For more details about the datasets see: [datasets.md](../../DATASETS.md).
+After our preliminary study, we utilized the identified contextual information and prompting technique to compare multiple LLM families on our **test split** dataset, which consists of 403 test cases across 11 vulnerability areas and on our **real-world dataset** (Mnestix), which consits of 114 real-world security findings. For more details about the datasets see: [datasets.md](../../DATASETS.md).
 
 We have further prepared an [exemplary prompt](./exemplary_prompt.py) to show how we integrate the contextual information of a security finding into our prompt template.
 
