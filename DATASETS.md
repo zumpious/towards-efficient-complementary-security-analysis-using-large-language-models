@@ -65,7 +65,8 @@ To demonstrate that we have developed a generalizable framework for complementar
 
 ### Characteristics
 
-- Mnestix is primarily written in **C# and TypeScript**, but also includes **Java components** and infrastructure code such as **Dockerfiles**.
+- Mnestix is primarily written in **C# and TypeScript**, but also includes infrastructure code such as **Dockerfiles**.
+- Mnestix also imported the **Java components** from the open‐source project [BaSyx](https://github.com/eclipse-basyx), which were subsequently analyzed.
 
 ### Used SAST Tools
 
