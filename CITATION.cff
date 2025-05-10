@@ -1,9 +1,9 @@
 cff-version: 1.1.0
 message: "If you use this data, please cite it as below."
 authors:
-- family-names: Jonas
-  given-names: Wagner
-title:zumpious/towards-efficient-complementary-security-analysis-using-large-language-models: Zenodo Release
+- family-names: Wagner
+  given-names: Jonas
+title: zumpious/towards-efficient-complementary-security-analysis-using-large-language-models: Zenodo Release
 version: v1.0.2
 date-released: 2025-05-10
                                 
